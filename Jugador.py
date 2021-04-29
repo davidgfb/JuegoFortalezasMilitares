@@ -15,7 +15,8 @@ class Jugador:
         cantidad=self.getDinero().getCantidad()
 
         if coste>cantidad:
-            print("No puedes hacer la compra.\n"+\
+            print("No puedes hacer la compra de "+\
+                  str(mejora.toString())+"\n"+\
                   "Tienes "+str(cantidad)+"\n"+\
                   "Necesitas "+str(coste)+"\n"+\
                   "Te faltan "+str(coste-cantidad)+"\n"+\
@@ -24,7 +25,8 @@ class Jugador:
             cantidad-=coste
             self.getDinero().setCantidad(cantidad)
             self.setMejora(mejora)
-            print("Puedes hacer la compra. "+\
+            print("Has comprado "+\
+                  str(mejora.toString())+"\n"+\
                   "Te quedan "+\
                   str(self.getDinero().getCantidad())) 
                               

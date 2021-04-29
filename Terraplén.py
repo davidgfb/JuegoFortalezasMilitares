@@ -5,10 +5,12 @@ class Terraplén(Mejora):
         Mejora.__init__(self,precio)
         
     def toString(self):
-        return "{Terraplén: precio="+str(self.getPrecio())+"}"
+        return "{Terraplén: precio="+str(self.getPrecio().getCoste())+"}"
 
 '''
 #PROBADOR
-terraplén=Terraplén(20)
+from Precio import Precio
+precio=Precio(20)
+terraplén=Terraplén(precio)
 print(terraplén.toString())
 '''
