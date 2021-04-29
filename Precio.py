@@ -9,7 +9,7 @@ class Precio:
         return self.coste
         
     def toString(self):
-        return "Precio:"+str(self.getCoste())
+        return "Precio: coste="+str(self.getCoste())
 
 '''
 #PROBADOR
