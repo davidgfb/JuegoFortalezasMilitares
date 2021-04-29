@@ -1,11 +1,13 @@
-#from Mejora import Mejora
-
 class Jugador:
-    def __init__(self):
+    def __init__(self,dinero):
         self.setMejoras([])
+        self.setDinero(dinero)
 
-    def compra(self,mejora): #Mejora string
+    def compra(self,mejora): 
         self.setMejora(mejora)
+
+    def setDinero(self,dinero):
+        self.dinero=dinero
 
     def setMejoras(self,mejoras):
         self.mejoras=mejoras
@@ -16,16 +18,34 @@ class Jugador:
     def getMejoras(self):
         return self.mejoras
 
+    def getDinero(self):
+        return self.dinero
+
+    def recogeDinero(self,cantidad):
+        dinero=self.getDinero()
+        dinero.setCantidad(dinero.getCantidad()+cantidad)
+
     def toString(self):
         sMejoras=[]
+
         for mejora in self.getMejoras():
             sMejoras.append(mejora.toString())
-        return "Jugador: mejoras="+str(sMejoras)
+
+        return "Jugador: mejoras="+str(sMejoras)+\
+               ", dinero="+self.getDinero().toString()
 
 '''
 #PROBADOR
-jugador=Jugador()
-jugador.compra("cortina")
-jugador.compra("terraplén")
+from Cortina import Cortina
+from Terraplén import Terraplén
+from Dinero import Dinero
+from Ladrillo import Ladrillo
+material=Ladrillo()
+dinero=Dinero(0)
+jugador=Jugador(dinero)
+cortina=Cortina(material)
+terraplén=Terraplén()
+jugador.compra(cortina)
+jugador.compra(terraplén)
 print(jugador.toString())
 '''

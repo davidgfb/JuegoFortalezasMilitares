@@ -1,5 +1,4 @@
 from Mejora import Mejora
-from Ladrillo import Ladrillo
 
 class Cortina(Mejora):
     def __init__(self,material):
@@ -16,6 +15,7 @@ class Cortina(Mejora):
 
 '''
 #PROBADOR
+from Ladrillo import Ladrillo
 material=Ladrillo()
 cortina=Cortina(material)
 print(cortina.toString())
