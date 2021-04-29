@@ -1,9 +1,6 @@
-#from Materu
-
-class Material:
-    #def __
+class Material: #@abstractmethod
     def toString(self):
-        return "Material:"
+        return "{Material:}"
 
 '''
 #PROBADOR

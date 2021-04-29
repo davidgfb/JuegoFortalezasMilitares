@@ -2,17 +2,11 @@ from Mejora import Mejora
 
 class Cortina(Mejora):
     def __init__(self,material,precio):
+        Mejora.__init__(self,precio)
         self.setMaterial(material)
-        self.setPrecio(precio)
 
-    def setMaterial(self,material): #Material
+    def setMaterial(self,material): 
         self.material=material
-
-    def setPrecio(self,precio):
-        self.precio=precio
-
-    def getPrecio(self):
-        return self.precio
 
     def getMaterial(self):
         return self.material

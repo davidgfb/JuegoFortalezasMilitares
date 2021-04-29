@@ -1,12 +1,19 @@
+class Mejora: #@abstractmethod #coste
+    def __init__(self,precio):
+        self.setPrecio(precio)
 
-class Mejora:
-    #def __init__(self):
-        
+    def setPrecio(self,precio):
+        self.precio=precio
+
+    def getPrecio(self):
+        return self.precio
+
     def toString(self):
-        return "Mejora: "
+        return "{Mejora: precio="+\
+               str(self.getPrecio())+"}"
 
 '''
 #PROBADOR
-mejora=Mejora()
+mejora=Mejora(10)
 print(mejora.toString())
 '''

@@ -1,4 +1,4 @@
-class Precio:
+class Precio: #cantidad
     def __init__(self,coste):
         self.setCoste(coste)
 
@@ -9,7 +9,8 @@ class Precio:
         return self.coste
         
     def toString(self):
-        return "Precio: coste="+str(self.getCoste())
+        return "{Precio: coste="+\
+               str(self.getCoste())+"}"
 
 '''
 #PROBADOR

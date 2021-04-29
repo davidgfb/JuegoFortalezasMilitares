@@ -4,6 +4,8 @@ from Terraplén import Terraplén
 from Ladrillo import Ladrillo
 from Dinero import Dinero
 from Precio import Precio
+from Nivel import Nivel
+
 from threading import Thread
 from time import sleep
 
@@ -14,15 +16,17 @@ def recogeDinero(jugador,cantidad):
         sleep(1)
 
 dinero=Dinero(10)
-#dinero=Dinero(0)
-jugador=Jugador(dinero)
+nivel1=Nivel(1)
+mejoras=[]
+jugador=Jugador(mejoras,dinero,nivel1)
 material=Ladrillo()
-precio=Precio(10)
-cortina=Cortina(material,precio)
-terraplén=Terraplén()
+precioCortina=Precio(10)
+precioTerraplén=Precio(20)
+cortina=Cortina(material,precioCortina) #cuidado con Precio
+terraplén=Terraplén(precioTerraplén) #log
 
 jugador.compra(cortina)
-#jugador.compra(terraplén)
+jugador.compra(terraplén)
 
 print(jugador.toString())
 #Thread(target=recogeDinero,args=[jugador,1]).start()
