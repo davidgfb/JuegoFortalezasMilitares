@@ -18,9 +18,10 @@ class Cortina(Mejora):
         return self.material
     
     def toString(self):
-        return "Cortina: material="+\
+        return "{Cortina: material="+\
                self.getMaterial().toString()+\
-               ", precio="+self.getPrecio().toString()
+               ", precio="+self.getPrecio().toString()+\
+               "}"
 
 '''
 #PROBADOR

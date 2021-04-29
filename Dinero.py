@@ -1,6 +1,6 @@
 class Dinero:
     def __init__(self,cantidad):
-        self.setCantidad(0)
+        self.setCantidad(cantidad)
 
     def setCantidad(self,cantidad):
         self.cantidad=cantidad
@@ -9,8 +9,8 @@ class Dinero:
         return self.cantidad
 
     def toString(self):
-        return "Dinero: cantidad="+\
-               str(self.getCantidad())
+        return "{Dinero: cantidad="+\
+               str(self.getCantidad())+"}"
 
 '''
 #PROBADOR

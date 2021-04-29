@@ -4,8 +4,21 @@ class Jugador:
         self.setDinero(dinero)
 
     def compra(self,mejora): 
-        self.setMejora(mejora)
+        coste=mejora.getPrecio().getCoste()
+        cantidad=self.getDinero().getCantidad()
 
+        if coste>cantidad:
+            print("No puedes hacer la compra.\n\
+                  Tienes",cantidad,\
+                  ", necesitas:",coste,\
+                  "te faltan",coste-cantidad)            
+        else:
+            cantidad-=coste
+            self.getDinero().setCantidad(cantidad)
+            self.setMejora(mejora)
+            print("Puedes hacer la compra. Te quedan",
+                  self.getDinero().getCantidad()) 
+                              
     def setDinero(self,dinero):
         self.dinero=dinero
 
@@ -23,7 +36,7 @@ class Jugador:
 
     def recogeDinero(self,cantidad):
         dinero=self.getDinero()
-        dinero.setCantidad(dinero.getCantidad()+cantidad)
+        dinero.setCantidad(dinero.getCantidad()+cantidad)        
 
     def toString(self):
         sMejoras=[]
