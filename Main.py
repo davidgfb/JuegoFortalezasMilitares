@@ -36,7 +36,7 @@ jugador.compra(terraplén)
 
 jugador.subeA_Nivel(2)
 
-print(jugador.toString())
+#print(jugador.toString())
 #Thread(target=recogeDinero,args=[jugador,1]).start()
 
 

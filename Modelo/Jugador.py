@@ -11,28 +11,32 @@ class Jugador:
 
     def subeA_Nivel(self,nivelAumentado):
         self.getNivel().setN_Nivel(nivelAumentado)
+        print(self.toString()+" ha subido a nivel "+\
+              str(self.getNivel().getN_Nivel()))
 
     def compra(self,mejora): 
         coste=mejora.getPrecio().getCoste()
         cantidad=self.getDinero().getCantidad()
 
         if coste>cantidad:
-            print("No puedes hacer la compra de "+\
+            print(self.toString()+\
+                  " no puede hacer la compra de "+\
                   str(mejora.toString())+"\n"+\
-                  "Tienes "+str(cantidad)+"\n"+\
-                  "Necesitas "+str(coste)+"\n"+\
-                  "Te faltan "+str(coste-cantidad)+"\n"+\
+                  "Tiene "+str(cantidad)+"\n"+\
+                  "Necesita "+str(coste)+"\n"+\
+                  "Le faltan "+str(coste-cantidad)+"\n"+\
                   10*"-") #es str
         else:
             cantidad-=coste
             self.getDinero().setCantidad(cantidad)
             self.setMejora(mejora)
-            print("Has comprado "+\
+            print(self.toString()+\
+                  " ha comprado "+\
                   str(mejora.toString())+"\n"+\
-                  "Te quedan "+\
+                  "Le quedan "+\
                   str(self.getDinero().getCantidad())+\
-                  "\n"+10*"-"+"\n"+\
-                  self.toString()+"\n"+10*"-")
+                  "\n"+10*"-")#+"\n"+\
+                  #self.toString()+"\n"+10*"-")
 
     def recogeDinero(self,cantidad):
         dinero=self.getDinero()
@@ -84,7 +88,7 @@ class Jugador:
                self.getTortuga().toString()+\
                "}"
 
-#'''
+'''
 #PROBADOR
 import sys,os;
 ruta=os.path.dirname(os.path.dirname(\
@@ -117,4 +121,4 @@ terraplén=Terraplén(precioTerraplén)
 jugador.compra(cortina)
 jugador.compra(terraplén)
 #print(jugador.toString())
-#'''
+'''
