@@ -25,9 +25,16 @@ class Tortuga(Turtle):
             self.forward(self.getLongLado())
             self.left(angulo)
 
+    def toString(self):
+        return "{Tortuga: nLados="+\
+               str(self.getN_Lados())+\
+               ", longLado="+\
+               str(self.getLongLado())+"}"
+
 '''
 #PROBADOR    
 tortuga = Tortuga(3,100)
+print(tortuga.toString())
 tortuga.hideturtle()
 tortuga.speed(0)
 tortuga.pinta()
