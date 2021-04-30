@@ -26,3 +26,12 @@ material=Ladrillo()
 cortina=Cortina(material,precio)
 print(cortina.toString())
 '''
+
+'''
+#from .Mejora import Mejora
+
+if __name__ == '__main__':
+    from mymodule import as_int
+else:
+    from .mymodule import as_int
+'''

@@ -1,10 +1,10 @@
-from Jugador import Jugador
-from Cortina import Cortina
-from Terraplén import Terraplén
-from Ladrillo import Ladrillo
-from Dinero import Dinero
-from Precio import Precio
-from Nivel import Nivel
+from Modelo.Jugador import Jugador 
+from Modelo.Cortina import Cortina
+from Modelo.Terraplén import Terraplén
+from Modelo.Ladrillo import Ladrillo
+from Modelo.Dinero import Dinero
+from Modelo.Precio import Precio
+from Modelo.Nivel import Nivel
 
 from threading import Thread
 from time import sleep
