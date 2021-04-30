@@ -8,7 +8,7 @@ from Modelo.Nivel import Nivel
 
 from Vista.Tortuga import Tortuga
 
-from threading import Thread
+from threading import Thread,Timer
 from time import sleep
 
 def recogeDinero(jugador,cantidad):
@@ -18,7 +18,6 @@ def recogeDinero(jugador,cantidad):
         sleep(1)
 
 tortuga=Tortuga(3,100)
-tortuga.hideturtle()
 #tortuga.speed(0)
 #tortuga.pinta()
 dinero=Dinero(10)
@@ -34,7 +33,18 @@ terraplén=Terraplén(precioTerraplén) #log
 jugador.compra(cortina)
 jugador.compra(terraplén)
 
+#Timer(1,print,["hola"]).start()
+
+sleep(1)
 jugador.subeA_Nivel(2)
+sleep(1)
+jugador.subeA_Nivel(3)
+sleep(1)
+jugador.subeA_Nivel(4)
+sleep(1)
+jugador.subeA_Nivel(5)
+sleep(1)
+jugador.subeA_Nivel(6)
 
 #print(jugador.toString())
 #Thread(target=recogeDinero,args=[jugador,1]).start()

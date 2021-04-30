@@ -20,7 +20,7 @@ class Tortuga(Turtle):
     
     def pinta(self):
         nLados=self.getN_Lados()
-        angulo=360//nLados
+        angulo=360/nLados
         for figura in range(nLados):
             self.forward(self.getLongLado())
             self.left(angulo)

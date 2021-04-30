@@ -1,18 +1,28 @@
 class Jugador:
-    def __init__(self,
-                 mejoras,
-                 dinero,
-                 nivel,
+    def __init__(self,mejoras,dinero,nivel,
                  tortuga):
         self.setMejoras(mejoras)#[]) 
         self.setDinero(dinero)
         self.setNivel(nivel)
         self.setTortuga(tortuga)
 
+    def dibujaMejoras(self):
+        tortuga=self.getTortuga()
+        nLadosCortina=self.getNivel().\
+                      getN_Nivel()+2
+
+        tortuga.clear()
+        
+        for mejora in self.getMejoras():                
+            tortuga.setN_Lados(nLadosCortina) 
+            tortuga.pinta()
+
     def subeA_Nivel(self,nivelAumentado):
         self.getNivel().setN_Nivel(nivelAumentado)
+        self.dibujaMejoras()
         print(self.toString()+" ha subido a nivel "+\
-              str(self.getNivel().getN_Nivel()))
+              str(self.getNivel().getN_Nivel())+\
+              "\n"+10*"-")
 
     def compra(self,mejora): 
         coste=mejora.getPrecio().getCoste()
@@ -30,12 +40,16 @@ class Jugador:
             cantidad-=coste
             self.getDinero().setCantidad(cantidad)
             self.setMejora(mejora)
+
+            self.dibujaMejoras()
+
             print(self.toString()+\
                   " ha comprado "+\
                   str(mejora.toString())+"\n"+\
                   "Le quedan "+\
                   str(self.getDinero().getCantidad())+\
-                  "\n"+10*"-")#+"\n"+\
+                  "\n"+10*"-")
+                  #+"\n"+\
                   #self.toString()+"\n"+10*"-")
 
     def recogeDinero(self,cantidad):
@@ -45,6 +59,8 @@ class Jugador:
     ####### setters #######
     def setTortuga(self,tortuga):
         self.tortuga=tortuga
+        tortuga.hideturtle()
+        tortuga.speed(0)
 
     def setNivel(self,nivel):
         self.nivel=nivel
