@@ -30,12 +30,15 @@ class Jugador:
             print("Has comprado "+\
                   str(mejora.toString())+"\n"+\
                   "Te quedan "+\
-                  str(self.getDinero().getCantidad())) 
+                  str(self.getDinero().getCantidad())+\
+                  "\n"+10*"-"+"\n"+\
+                  self.toString()+"\n"+10*"-")
 
     def recogeDinero(self,cantidad):
         dinero=self.getDinero()
         dinero.setCantidad(dinero.getCantidad()+cantidad)        
 
+    ####### setters #######
     def setTortuga(self,tortuga):
         self.tortuga=tortuga
 
@@ -50,7 +53,9 @@ class Jugador:
 
     def setMejora(self,mejora):
         self.mejoras.append(mejora)
+    #####################
 
+    ###### getters #####
     def getNivel(self):
         return self.nivel
 
@@ -62,6 +67,7 @@ class Jugador:
 
     def getDinero(self):
         return self.dinero
+    #####################
 
     def toString(self):
         sMejoras=[]
@@ -78,11 +84,12 @@ class Jugador:
                self.getTortuga().toString()+\
                "}"
 
-'''
+#'''
 #PROBADOR
 import sys,os;
-ruta=os.path.dirname(os.path.dirname(\ #en tiempo de ejecucion #volatil
+ruta=os.path.dirname(os.path.dirname(\
                      os.path.realpath(__file__)))
+                    #en tiempo de ejecucion volatil
 sys.path.append(ruta)
 print(ruta)
 
@@ -101,7 +108,7 @@ precioCortina=Precio(10)
 precioTerraplén=Precio(20)
 nivel1=Nivel(1)
 material=Ladrillo()
-dinero=Dinero(0)
+dinero=Dinero(10)
 mejoras=[]
 jugador=Jugador(mejoras,dinero,nivel1,tortuga)
 cortina=Cortina(material,precioCortina) #no precioCantidad
@@ -109,5 +116,5 @@ terraplén=Terraplén(precioTerraplén)
 
 jugador.compra(cortina)
 jugador.compra(terraplén)
-print(jugador.toString())
-'''
+#print(jugador.toString())
+#'''
